@@ -1,0 +1,2 @@
+#!/bin/bash
+while true ; do echo "Ip"  && netstat -ls | grep  "total packets received" | awk '{print $1}' && echo -e "\nUDP" && netstat -ls | grep  "packets received" |  awk 'NR>1 {print last} {last=$1}' && echo -e "\n\n" ; sleep 5 ; done 
