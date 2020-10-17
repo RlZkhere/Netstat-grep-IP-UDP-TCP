@@ -1,2 +1,8 @@
 #!/bin/bash
-while true ; do echo "Ip"  && netstat -ls | grep  "total packets received" | awk '{print $1}' && echo -e "\nUDP" && netstat -ls | tail -45 | grep  "packets received" |  awk '{print $1}' && echo -e "\n\n" ; sleep 5 ; done 
+while true ; do echo "Ip"  && 
+netstat -ls | grep  "total packets received" | awk '{print $1}' && 
+echo -e "\nUDP" && 
+netstat -ls | tail -45 | grep  "packets received" |  awk '{print $1}' && 
+echo -e "\n\n" ; 
+sleep 5 ;
+done 
