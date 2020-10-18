@@ -1,2 +1,2 @@
 # Netstat-grep-IP-and-UDP
-Bash script used for tracking IP and UDP pkg received
+Bash script used for tracking IP, TCP and UDP pkg received
