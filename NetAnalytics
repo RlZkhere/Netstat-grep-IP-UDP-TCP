@@ -1,8 +1,13 @@
 #!/bin/bash
-while true ; do echo "Ip"  && 
-netstat -ls | grep  "total packets received" | awk '{print $1}' && 
-echo -e "\nUDP" && 
-netstat -ls | tail -45 | grep  "packets received" |  awk '{print $1}' && 
-echo -e "\n\n" ; 
-sleep 5 ;
-done 
+while true ; do echo -e "Ip\n"  && 
+IPpkg=$(netstat -ls | grep  "total packets received" | awk '{print $1}') && 
+echo -e "\e[31m$IPpkg\e[0m"
+echo -e "\nUDP\n" && 
+UDPpkg=$(netstat -ls | tail -45 | grep  "packets received" |  awk '{print $1}') &&
+echo -e "\e[32m$UDPpkg\e[0m" &&
+echo -e "\nTCP\n" &&
+TCPpkg=$(netstat -ls | head -27 | grep "segments received" | awk '{print $1}') &&
+echo -e "\e[34m$TCPpkg\e[0m" &&
+echo -e "\n\n" ;
+sleep 5 ; 
+done
